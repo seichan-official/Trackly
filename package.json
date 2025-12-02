@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "baseline-browser-mapping": "^2.8.32",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.25"
+  }
+}
