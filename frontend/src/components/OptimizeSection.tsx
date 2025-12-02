@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function OptimizeSection() {
   return(
-<section className="flex items-start justify-center px-20 py-32 gap-20 mb-20">
+<section className="flex items-start justify-center px-20 py-32 gap-20 mb-10">
   <div className="flex-1 flex justify-center -mt-15">
     <img src="/image/question.jpg" alt="question" className="w-[500px]" />
   </div>
