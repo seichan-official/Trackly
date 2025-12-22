@@ -14,15 +14,15 @@ export default function Header () {
       </div>
       <div className="flex justify-end items-start pr-40">
         <button className="py-1 px-5 bg-black rounded-2xl text-white font-black border-2 border-black -mt-10 hover:bg-gray-800">
-          <Link href="/SignIn" >
-            <h1>Sign In</h1>
+          <Link href="/login" >
+            <h1>Log In</h1>
           </Link>
         </button>
       </div>
       
       <div className="flex justify-end items-start pr-10">
         <button className="py-1 px-5 bg-white rounded-2xl text-black font-black border-2 border-black -mt-10 hover:bg-gray-200">
-          <Link href="/SignUp">
+          <Link href="/signUp">
             <h1>Sign Up</h1>
           </Link>
         </button>

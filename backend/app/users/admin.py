@@ -3,4 +3,10 @@ from .models import UserProfile
 
 @admin.register(UserProfile)
 class userProfileAdmin(admin.ModelAdmin):
-  list_display = ('id', 'name', 'email', 'total_earnings', 'total_distance','hourly_wage')
+  list_display = (
+        "id",
+        "user",
+        "phone",
+        "created_at",
+        "updated_at",
+    )

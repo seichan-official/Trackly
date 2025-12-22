@@ -8,7 +8,7 @@ import SlideButton from "@/components/SlideInText";
 export default function HeroSection() {
   return(
 <section className="min-h-screen flex items-center justify-between px-20 pt-10">
-  <div className="flex-1 flex flex-col justify-center">
+  <div className="flex-1 flex flex-col justify-center mt-30">
         <div className="max-w-xl space-y-6 pb-20">
           <SlideTitle>
           <h1 className="text-4xl font-bold pb-5 pl-5">
@@ -32,7 +32,7 @@ export default function HeroSection() {
         </div>
   </div>
   <SlideTitle delay={0.5}>
-  <div className="flex justify-end flex-1 pb-20">
+  <div className="flex justify-end flex-1 pb-20 mt-30">
     <img src="Image/delivery.jpg" alt="delivery" className="w-[600px] " />
   </div>
   </SlideTitle>

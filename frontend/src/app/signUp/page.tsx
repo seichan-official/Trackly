@@ -1,50 +1,24 @@
-"use client";
+'use client';
 
 import Link from "next/link";
 import React, { useState } from "react";
-import axios from "axios";
-import { useRouter } from "next/navigation";
 
 export default function Login() {
-  const router = useRouter();
+  const [username,setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password,setPassword] = useState('');
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = (e:React.FormEvent) => {
     e.preventDefault();
-
-    try {
-      const res = await axios.post(
-      "http://127.0.0.1:8000/api/account/login/",
-      {
-        username,
-        password,
-      },
-      {
-        withCredentials: true,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-      console.log("ログイン成功: ", res.data);
-
-      // 成功後にダッシュボードへ遷移
-      router.push("/dashboard");
-    } catch (error) {
-      console.error("ログインエラー: ", error);
-      alert("メールアドレスまたはパスワードが間違っています");
-    }
+    console.log("新規登録:", username, password);
   };
-
-  return (
+   return (
     <div className="min-h-screen flex items-center justify-center px-6">
-      <form
+      <form 
         onSubmit={handleLogin}
         className="w-full max-w-sm space-y-6 bg-white shadow-md p-8 rounded-xl"
       >
-        <h2 className="text-2xl font-bold mb-4">ログイン</h2>
+        <h2 className="text-2xl font-bold mb-4">新規登録</h2>
 
         <div>
           <label className="block mb-1 text-gray-700">ユーザー名</label>
@@ -52,6 +26,16 @@ export default function Login() {
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-green-300"
+          />
+        </div>
+
+        <div>
+          <label className="block mb-1 text-gray-700">メールアドレス</label>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-green-300"
           />
         </div>
@@ -65,19 +49,13 @@ export default function Login() {
             className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-green-300"
           />
         </div>
-
+      <Link href="/dashboard">
         <button
           type="submit"
           className="w-full py-2 bg-green-500 text-white rounded-lg font-bold hover:bg-green-600">
-          ログイン
+          登録
         </button>
-
-        <p className="text-center text-sm text-gray-600">
-          アカウントをお持ちでない方は{" "}
-          <Link href="/signUp" className="text-green-600 underline">
-            新規登録
-          </Link>
-        </p>
+      </Link>
       </form>
     </div>
   );
